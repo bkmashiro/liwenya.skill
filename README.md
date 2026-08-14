@@ -5,19 +5,19 @@
 >
 > 一个 Skill，如果只会在句子后面加“恶不恶”“走着瞧”，它就掌握文亚精神了吗？！我看没有！
 >
-> 真正的文亚体，不是几个口号的问题。它有自己的世界观，有自己的判断路线，有自己的阵营变化，还有自己的历史规律！所以我们这个项目，不是简单模仿几句话，是要把**产生这些话的那台机器**研究清楚。
+> 真正的文亚体，不是几个口号的问题。它有自己的世界观，有自己的判断路线，有自己的角色变化，还有自己的历史规律！所以我们这个项目，不是简单模仿几句话，是要把**产生这些话的那台机器**研究清楚。
 >
 > 不信，你装上试试。咱们就走着瞧！
 
-A parody/style skill for generating **文亚体 / 文亚宇宙** dialogue and narration.
+这是一个用于生成 **文亚体 / 文亚宇宙** 对话与叙事的 parody / 风格研究 Skill。
 
-> **Parody notice:** generated text is not an authentic Li Wenya quotation unless separately verified from a recording or reliable transcript.
+> **说明：** 本项目生成的内容默认属于二创，不应被当作李文亚本人真实语录。只有在能够追溯到录像、可靠转录或其他明确来源时，才应标记为真实引语。
 
 ## 文亚 Kernel
 
-The core idea is simple:
+核心原则很简单：
 
-> **Do not imitate the words. Simulate the machine that produces the words.**
+> **不要只模仿他说过什么，要模拟“为什么会说出这些话”的那套生成机制。**
 
 ```text
 朴素直觉是底层真理
@@ -35,42 +35,46 @@ The core idea is simple:
 历史最终会作出判断
 ```
 
-In other words:
+也就是说：
 
 **文亚精神 = 朴素机械直觉 + 先定性后论证 + 立场条件化可信度 + 新旧路线斗争 + 网友输入自动入典 + 官僚化宇宙扩张 + 历史必然性。**
 
-If the output merely sounds angry, the skill has failed.
+如果输出只是“一个很生气的人在喊话”，那就说明这个 Skill 没学到位。
 
-## Quick start
+## 快速开始
 
 一个 Skill，你不调用，你怎么知道它正确不正确？！
 
-Load [`SKILL.md`](./SKILL.md), then give it a harmless topic or fictional premise:
+载入 [`SKILL.md`](./SKILL.md)，然后给它一个无害话题或明显虚构的设定即可。
+
+例如：
 
 ```text
-Use liwenya.skill in speech mode:
+使用 liwenya.skill 的 speech 模式：
 LLVM 把我的程序优化坏了。
 ```
 
+或者：
+
 ```text
-Use liwenya.skill in minke-tv mode:
+使用 liwenya.skill 的 minke-tv 模式：
 月球土豆科学院突然改口支持另一套薯条理论。
 ```
 
-## Four output modes
+## 四种输出模式
 
-| Mode | What it generates |
+| 模式 | 输出内容 |
 |---|---|
-| `speech` | 第一人称、面对镜头式文亚发言 |
+| `speech` | 第一人称、面对镜头式的文亚发言 |
 | `minke-tv` | “重磅 / 光速变脸 / 波澜又起”式民科TV标题与旁白 |
-| `conference` | 一本正经的第 N 次理论讨论大会 / 公报 |
-| `wiki` | 把荒诞设定当既成历史写成世界观条目 |
+| `conference` | 一本正经的“第 N 次理论讨论大会”与公报 |
+| `wiki` | 把荒诞设定当作既成历史写成世界观条目 |
 
-Intensity can range from **本人语感 → 批斗体 → 文亚宇宙 → 鬼畜**.
+强度可以从 **本人语感 → 批斗体 → 文亚宇宙 → 鬼畜** 逐级提高。
 
-## The important part: belief updates
+## 最重要的部分：belief update
 
-A 文亚宇宙 character is not just a bag of catchphrases. New information changes the **classification of the source** before it changes the core theory.
+文亚宇宙中的角色不是一组固定口癖。真正重要的是：**新信息通常先改变消息来源的阵营归类，而不是直接改变核心理论。**
 
 ```text
 支持当前判断
@@ -86,11 +90,11 @@ A 文亚宇宙 character is not just a bag of catchphrases. New information chan
 → 欢迎改正 / 重新吸收
 ```
 
-The same institution can therefore be praised in one episode and questioned in the next. That is not necessarily a continuity bug; in 文亚宇宙 it is often the plot engine.
+因此，同一个机构在某一集里可以得到肯定，在下一集里又被重新评价。这在文亚宇宙里不一定是设定冲突，很多时候它本身就是剧情发动机。
 
-## Universe compiler
+## 文亚宇宙编译器
 
-Any harmless meme premise can be expanded with four passes:
+任何一个无害的 meme 设定，都可以经过四步扩张：
 
 ```text
 普通事件
@@ -100,7 +104,7 @@ Any harmless meme premise can be expanded with four passes:
 → 连续剧化
 ```
 
-For example:
+例如：
 
 ```text
 网友说土豆应该切粗一点
@@ -110,9 +114,9 @@ For example:
 → 第十九次薯条理论讨论大会召开
 ```
 
-This scale inflation is intentional.
+这种规模膨胀不是 bug，而是文亚宇宙的核心叙事机制之一。
 
-## Repository layout
+## 仓库结构
 
 ```text
 .
@@ -125,34 +129,34 @@ This scale inflation is intentional.
     └── golden-tests.md
 ```
 
-- [`SKILL.md`](./SKILL.md): the Wenya Kernel and generation VM.
-- [`examples/basic.md`](./examples/basic.md): simple parody examples.
-- [`examples/golden-tests.md`](./examples/golden-tests.md): regression examples for all output modes.
-- [`CONTRIBUTING.md`](./CONTRIBUTING.md): contribution rules.
+- [`SKILL.md`](./SKILL.md)：Wenya Kernel 与生成状态机。
+- [`examples/basic.md`](./examples/basic.md)：基础风格迁移示例。
+- [`examples/golden-tests.md`](./examples/golden-tests.md)：多输出模式的回归测试集。
+- [`CONTRIBUTING.md`](./CONTRIBUTING.md)：贡献规则。
 
-## Golden-test philosophy
+## Golden Tests
 
-When changing the skill, run the same premise through multiple modes and check that:
+修改 Skill 后，建议使用同一组输入分别跑多个模式，并检查：
 
-1. the outputs are recognizably from the same universe;
-2. they are not merely copies with different formatting;
-3. belief-update and faction logic still work;
-4. the speaker does not become generic angry prose;
-5. vocalizations and catchphrases remain sparse;
-6. parody is never presented as an authentic quotation.
+1. 不同输出能明显看出属于同一个文亚宇宙；
+2. 不只是换个格式重复同一段话；
+3. belief update 与阵营变化逻辑仍然有效；
+4. 角色没有退化成普通的“愤怒发言”；
+5. 拟声词和固定口癖没有被滥用；
+6. 二创内容不会被包装成真实引语。
 
-## Authenticity
+## 真实性分级
 
-Keep these categories separate:
+在整理资料时，请始终区分：
 
-1. verified recording;
-2. reliable transcription;
-3. uploader title / paraphrase;
-4. community lore;
-5. newly generated parody.
+1. 可核实的录像原话；
+2. 可靠转录；
+3. 视频标题或近似转述；
+4. 社区世界观 / 网友二创；
+5. 新生成的 parody 内容。
 
-If someone asks “李文亚真的说过吗？”, leave roleplay mode and verify the source.
+如果用户问“李文亚真的说过这句话吗？”，应立即退出角色扮演，转入来源核验模式。
 
-## Disclaimer
+## 免责声明
 
-This repository is unaffiliated with Li Wenya. It is intended for parody, meme generation, and rhetorical/style study. Extreme fictional plots should stay obviously fictional; generated accusations should not be presented as factual claims about real people.
+本仓库与李文亚本人没有隶属或合作关系，主要用于 parody、meme 生成以及语言和叙事风格研究。涉及极端剧情时，应保持明显的虚构属性；生成内容不应被当作针对现实人物或机构的事实性指控。
